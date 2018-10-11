@@ -14,17 +14,20 @@ void draw(){
   }
 }
 class NormalParticle{
-  int myX,myY, myAngle;
-  int mySpeed;
+  double myX,myY,myAngle, mySpeed;
   NormalParticle(){
-    myX = myY =250;
+    myX = myY = 250;
+    mySpeed = (Math.random()*10);
+    myAngle = Math.random()*Math.PI*2;
   }
   void move(){
-    myX = myX +(int)(Math.random()*7)-3;
-    myY = myY +(int)(Math.random()*7)-3;
+    for(int i=0; i<particles.length; i++){ 
+    myX = myX + Math.cos(myAngle)*mySpeed;
+    myY = myY + Math.sin(myAngle)*mySpeed;
+    }
   }
   void show(){
-    ellipse(myX,myY,30,30);
+    ellipse((float)myX,(float)myY,8,8);
   }
 }
 
