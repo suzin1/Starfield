@@ -21,10 +21,8 @@ class NormalParticle{
     myAngle = Math.random()*Math.PI*2;
   }
   void move(){
-    for(int i=0; i<particles.length; i++){ 
     myX = myX + Math.cos(myAngle)*mySpeed;
     myY = myY + Math.sin(myAngle)*mySpeed;
-    }
   }
   void show(){
     ellipse((float)myX,(float)myY,8,8);
